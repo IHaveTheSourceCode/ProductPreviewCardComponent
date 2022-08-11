@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
 * {
   margin: 0;
 }
+
 :root {
   --cream: hsl(30, 38%, 92%);
   --dark-cyan: hsl(158, 36%, 37%);
@@ -8,20 +11,131 @@
   --very-dark-blue: hsl(212, 21%, 14%);
   --dark-grayish-blue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
+
+  --radius-container: 15px;
 }
 
 body {
   background-color: var(--cream);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-card {
-  width: 1440px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 10px solid black;
+  width: 600px;
+  height: 450px;
+  border-radius: var(--radius-container);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--white);
+  font-family: "Montserrat", sans-serif;
 }
 
-.main-image {
+.main-photo {
+  object-fit: cover;
+  width: 100%;
+  height: 450px;
+  border-radius: var(--radius-container) 0 0 var(--radius-container);
+}
+
+.content-right {
+  margin-left: 35px;
+  margin-top: 25px;
+}
+
+h2 {
+  letter-spacing: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--dark-grayish-blue);
+  opacity: 0.8;
+  font-weight: 00;
+}
+
+h1 {
+  line-height: 2rem;
+  margin-top: 15px;
+  color: var(--very-dark-blue);
+  width: 80%;
+  font-family: "Fraunces", serif;
+}
+
+p {
+  line-height: 1.5rem;
+  color: var(--dark-grayish-blue);
+  margin-top: 20px;
+  width: 80%;
+  /* min-width: 250px; */
+  font-size: 14px;
+}
+
+.current-price {
+  font-size: 2rem;
+  color: var(--dark-cyan);
+  font-family: "Fraunces", serif;
+}
+
+.previous-price {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+}
+
+.prices-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+button {
+  background-color: var(--dark-cyan);
+  border: none;
+  height: 45px;
+  width: 240px;
+  margin-top: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--white);
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(158, 14%, 22%);
+}
+
+@media screen and (max-width: 600px) {
+  .main-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    width: 90vw;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .main-photo {
+    border-radius: var(--radius-container) var(--radius-container) 0 0;
+    height: 40vh;
+  }
+
+  button {
+    width: 90%;
+    height: 55px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    width: 90%;
+  }
+
+  h1 {
+    width: 90%;
+  }
 }
